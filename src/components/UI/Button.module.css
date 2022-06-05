@@ -1,0 +1,77 @@
+.increment {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #0F70FD;
+  color: #0F70FD;
+  padding: .5rem .7rem;
+  margin: .3rem;
+  background-color: #ffffff;
+}
+
+.increment:hover,
+.increment:active {
+  color: #0EC5BC;
+  border-color: #0EC5BC;
+}
+
+.decrement {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #0F70FD;
+  color: #0F70FD;
+  padding: .5rem .7rem;
+  margin: .3rem;
+  background-color: #ffffff;
+}
+
+.addConfirm {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #50C713;
+  color: #ffffff;
+  padding: .8rem 2rem;
+  margin: .3rem;
+  float: right;
+  background-color: #50C713;
+}
+
+.add {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #0F70FD;
+  color: #ffffff;
+  padding: .8rem 2rem;
+  margin: .3rem;
+  float: right;
+  background-image: linear-gradient(to right, #484AFE , #056BFD);
+}
+
+/* .submit {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  font-weight: normal;
+  background-color: #ffffff;
+  border: 0.5px solid #0000007a;
+  color: black;
+} */
+
+/* .submit:hover,
+.submit:active{
+  background-color: #e03e36d2;
+  border-color: #e03e36;
+  color:#ffffff;
+} */
+
+/* .submit:disabled{
+  color:#e03e36;
+  border-color: #e03e36;
+} */
+
+.decrement:hover,
+.decrement:active {
+  color: #e03e36;
+  border-color: #e03e36;
+}

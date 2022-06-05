@@ -1,0 +1,15 @@
+.card {
+  min-height:17rem;
+  padding: 2rem;
+  margin: 7rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: white;
+}
+
+@media screen and (max-width: 920px)  {
+  .card {
+    min-width: 15rem;
+    margin: 0;
+  }
+}
