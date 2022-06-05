@@ -46,6 +46,23 @@
   background-image: linear-gradient(to right, #484AFE , #056BFD);
 }
 
+.delete{
+  
+  width: 1.5rem;
+  height:1.5rem;
+  border-radius: 50%;
+  background-color: #e70303;
+  border: .7px solid #e70303;
+  /* position: relative;
+  bottom: 1.5rem;
+  right: -2.5rem; */
+  
+  position:relative;
+  right: -2.5rem;
+  
+  color:#ffffff;
+}
+
 /* .submit {
   font: inherit;
   cursor: pointer;

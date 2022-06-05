@@ -7,7 +7,7 @@ import { saveAddedHotel } from "./lib/local-storage";
 
 const NewHotel = React.lazy(() => import("./pages/NewHotel"));
 
-const dummyHotelsList= [
+/* const dummyHotelsList= [
   {
     id: "vygh",
     score: 9,
@@ -63,7 +63,7 @@ try{
 } catch{
   
 }
-
+ */
 function App() {
   return (
     <Layout>

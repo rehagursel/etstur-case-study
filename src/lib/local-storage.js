@@ -43,3 +43,10 @@ export function saveAddedHotel(hotel) {
     return null;
   }
 }
+
+export function deleteAddedHotel(name) {
+
+   localStorage.removeItem(name);
+    
+  return null;
+}
