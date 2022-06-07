@@ -6,6 +6,7 @@ import NewHotelForm from "../components/hotels/NewHotelForm";
 import useLocale from "../hooks/use-locale";
 import { saveAddedHotel } from "../lib/local-storage";
 import { listActions } from "../store/list-slice";
+import { sortIsScoreActions } from "../store/sort-slice";
 
 const NewHotel = () => {
   const {
@@ -24,7 +25,7 @@ const NewHotel = () => {
     const timer = setTimeout(() => {
       console.log("NewHotel-UE-settimeout");
       history.push("/hotels-list");
-    }, 1000);
+    }, 600);
 
     return () => {
       clearTimeout(timer);
@@ -32,6 +33,7 @@ const NewHotel = () => {
   }, [status, history]);
 
   const loadHotelHandler = (newHotelData) => {
+    dispatch(sortIsScoreActions.sort(false));
     sendSaveRequest(newHotelData);
     dispatch(listActions.addHotelToList(newHotelData));
   };

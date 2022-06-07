@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 /* import { useHistory } from "react-router-dom"; */
 
 import Button from "../UI/Button";
@@ -13,6 +13,8 @@ import classes from "./HotelItem.module.css";
 const HotelItem = (props) => {
   const [score, setScore] = useState(+props.score);
   const [isHover, setIsHover] = useState(false);
+  const sortMethodIsScore = useSelector((state) => state.sort.sortIsScore);
+  /* const hotelLogTime = useSelector((state) => state.list.hotelsLogTimes); */
   /* const { sendRequest: sendDeleteRequest, status: deleteStatus } =
     useLocale(deleteAddedHotel); */
   const { sendRequest: sendEditRequest, status: editStatus } =
@@ -20,6 +22,19 @@ const HotelItem = (props) => {
   const dispatch = useDispatch();
   console.log("HotelItem");
   /* const history = useHistory(); */
+
+  useEffect(() => {
+    if (!sortMethodIsScore) {
+      return;
+    }
+    const time = new Date();
+    sendEditRequest({
+      name: props.name,
+      score: score,
+      editTime: Date.parse(time),
+      logTime: props.logTime,
+    });
+  }, [score]);
 
   useEffect(() => {
     /* if (deleteStatus === "completed") {
@@ -32,33 +47,24 @@ const HotelItem = (props) => {
     }
   }, [/* deleteStatus, */ editStatus, score]);
 
-  useEffect(() => {
-    const time = new Date();
-    sendEditRequest({
-      name: props.name,
-      score: score,
-      logTime: time,
-    });
-  }, [score]);
-
   const saveHotelNameHandler = () => {
     dispatch(listActions.saveHotelName(props.name));
     /* sendDeleteRequest(props.name); */
-   /*  history.push("/hotels-list"); */
+    /*  history.push("/hotels-list"); */
   };
 
   const incrementHandler = () => {
     if (score < 10) {
       setScore((score) => +(score + 0.1).toFixed(1));
     }
-    dispatch(sortIsScoreActions.sort());
+    dispatch(sortIsScoreActions.sort(true));
   };
 
   const decrementHandler = () => {
     if (score > 0.1) {
       setScore((score) => +(score - 0.1).toFixed(1));
     }
-    dispatch(sortIsScoreActions.sort());
+    dispatch(sortIsScoreActions.sort(true));
   };
 
   const deleteButtonAddHandler = () => {

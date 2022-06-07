@@ -5,6 +5,8 @@ const listSlice = createSlice({
   initialState: {
     hotelsList: [],
     deleteHotelName: [],
+    hotelsLogTimes: [],
+    activePaginationHotels: [],
   },
   reducers: {
     addHotelToList(state, action) {
@@ -18,8 +20,13 @@ const listSlice = createSlice({
           score: newHotel.score,
           name: newHotel.name,
           src: "https://www.etstur.com/resources_t/img/hotel/default_image.png",
+          editTime: newHotel.editTime,
           logTime: newHotel.logTime,
         });
+        /* state.hotelsLogTimes.push({
+          name: newHotel.name,
+          logTime: newHotel.logTime,
+        }); */
       }
     },
     editHotelAtTheList(state, action) {
@@ -39,6 +46,7 @@ const listSlice = createSlice({
       const name = action.payload;
       state.deleteHotelName = name;
     },
+    
   },
 });
 

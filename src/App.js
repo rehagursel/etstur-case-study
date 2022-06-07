@@ -8,6 +8,7 @@ import {
 import AllHotels from "./pages/AllHotels";
 import Layout from "./components/layout/Layout";
 import HotelDeleteModal from "./components/hotels/HotelDeleteModal";
+import Pagination from "./components/pagination/Pagination";
 /* import { saveAddedHotel } from "./lib/local-storage"; */
 
 const NewHotel = React.lazy(() => import("./pages/NewHotel"));
@@ -77,10 +78,6 @@ function App() {
     setModalIsShown(true);
   };
 
-  const hideModalHandler = () => {
-    setModalIsShown(false);
-  };
-
   return (
     <Layout>
       <Suspense>
@@ -88,10 +85,13 @@ function App() {
           <Route path="/" exact>
             <Redirect to="/hotels-list" />
           </Route>
-           {modalIsShown && <HotelDeleteModal onHideModal={hideModalHandler} />}
-          <Route path="/hotels-list" exact>
+           {modalIsShown && <HotelDeleteModal modalIsShown={modalIsShown} setModalIsShown={setModalIsShown} /* onHideModal={hideModalHandler} */ />}
+          <Route path="/hotels-list" >
             <AllHotels onShowModal={showModalHandler} />
           </Route>
+          {/* <Route path="/hotels-list/?page=!#" >
+            <Pagination />
+          </Route> */}
           <Route path="/new-hotel">
             <NewHotel />
           </Route>

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal";
@@ -17,21 +16,28 @@ const HotelDeleteModal = (props) => {
   const { sendRequest: sendDeleteRequest, status: deleteStatus } =
     useLocale(deleteAddedHotel);
   const dispatch = useDispatch();
-  const history = useHistory();
   
-
   useEffect(() => {
     if (deleteStatus !== "completed") {
       return;
     }
     dispatch(listActions.removeHotelFromList(reduxDeleteHotelName));
-    history.push("/hotels-list");
-  }, [deleteStatus, reduxDeleteHotelName]);
+    const timer = setTimeout(() => {
+      props.setModalIsShown(false)
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [deleteStatus, reduxDeleteHotelName, props.setModalIsShown]);
 
   const deleteHotelHandler = () => {
     sendDeleteRequest(reduxDeleteHotelName);
   };
-  console.log("reduxDeleteHotelName", reduxDeleteHotelName);
+
+  const closeModalHandler = () => {
+    props.setModalIsShown(false)
+  }
 
   let deleteButton = (
     <Button
@@ -56,20 +62,16 @@ const HotelDeleteModal = (props) => {
   }
 
   return (
-    <Modal onClick={props.onHideModal}>
-      {/* <div className={classes.total}> */}
+    <Modal onClick={closeModalHandler}>
       <h1>Oteli Sil</h1>
       <p>{reduxDeleteHotelName}'i silmek istediğinizden emin misiniz?</p>
-      {/* </div> */}
-      {/* <div className={classes.actions}> */}
       {deleteButton}
-      <Button className={"cancelBtn"} type="button" onClick={props.onHideModal}>
+      <Button className={"cancelBtn"} type="button" onClick={closeModalHandler}>
         VAZGEÇ
       </Button>
-      <Button className={"quit"} type="button" onClick={props.onHideModal}>
+      <Button className={"quit"} type="button" onClick={closeModalHandler}>
         &#x2715;
       </Button>
-      {/* </div> */}
     </Modal>
   );
 };

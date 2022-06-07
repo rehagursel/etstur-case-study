@@ -23,6 +23,7 @@ const NewBookForm = (props) => {
     props.onAddHotel({
       name: enteredName,
       score: enteredScore,
+      /* editTime: Date.parse(time), */
       logTime: Date.parse(time),
     });
   }
