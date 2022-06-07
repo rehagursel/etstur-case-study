@@ -24,15 +24,10 @@
   background-color: #ffffff;
 }
 
-.addConfirm {
-  cursor: pointer;
-  border-radius: 4px;
-  border: .7px solid #50C713;
-  color: #ffffff;
-  padding: .8rem 2rem;
-  margin: .3rem;
-  float: right;
-  background-color: #50C713;
+.decrement:hover,
+.decrement:active {
+  color: #e03e36;
+  border-color: #e03e36;
 }
 
 .add {
@@ -46,6 +41,60 @@
   background-image: linear-gradient(to right, #484AFE , #056BFD);
 }
 
+.addConfirm {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #50C713;
+  color: #ffffff;
+  padding: .8rem 2rem;
+  margin: .3rem;
+  float: right;
+  background-color: #50C713;
+}
+
+.deleteHotelBtn {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #0F70FD;
+  color: #ffffff;
+  padding: .7rem 2.3rem;
+  margin: .3rem;
+  background-image: linear-gradient(to right, #484AFE , #056BFD);
+}
+
+.deleteHotelBtn:hover,
+.deleteHotelBtn:active {
+  background-image:none;
+  background-color: #e03e36;
+  border-color: #e03e36;
+}
+
+.deleteHotelBtnConfirm {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #50C713;
+  color: #ffffff;
+  padding: .7rem 2.3rem;
+  margin: .3rem;
+  background-color: #50C713;
+}
+
+.cancelBtn {
+  cursor: pointer;
+  border-radius: 4px;
+  border: .7px solid #0F70FD;
+  color: #0F70FD;
+  padding: .7rem 2.3rem;
+  margin: .3rem;
+  background-color: #ffffff;
+}
+
+.cancelBtn:hover,
+.cancelBtn:active {
+  color: #0EC5BC;
+  border-color: #0EC5BC;
+}
+
 .delete{
   
   width: 1.5rem;
@@ -57,38 +106,26 @@
   bottom: 1.5rem;
   right: -2.5rem; */
   
-  position:relative;
-  right: -2.5rem;
+  /* position:relative;
+  right: -2.5rem; */
   
   color:#ffffff;
 }
-
-/* .submit {
-  font: inherit;
-  cursor: pointer;
-  padding: 0.2rem 0.6rem;
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  font-weight: normal;
-  background-color: #ffffff;
-  border: 0.5px solid #0000007a;
-  color: black;
-} */
-
-/* .submit:hover,
-.submit:active{
-  background-color: #e03e36d2;
-  border-color: #e03e36;
-  color:#ffffff;
-} */
-
-/* .submit:disabled{
-  color:#e03e36;
-  border-color: #e03e36;
-} */
-
-.decrement:hover,
-.decrement:active {
-  color: #e03e36;
-  border-color: #e03e36;
+.quit{
+  
+  width: 1.5rem;
+  height:1.5rem;
+  border-radius: 50%;
+  background-color: #EBF1FA;
+  border: .7px solid #EBF1FA;
+  /* position: relative;
+  bottom: 1.5rem;
+  right: -2.5rem; */
+  
+  /* position:relative;
+  right: -2.5rem; */
+  
+  color:#0000008e;
 }
+
+

@@ -1,9 +1,14 @@
-import React, { useEffect, Suspense } from "react";
-import { Route, Switch, Redirect, useHistory } from "react-router-dom";
+import React, { /* useEffect, */ useState, Suspense } from "react";
+import {
+  Route,
+  Switch,
+  Redirect /* useLocation */ /* useHistory */,
+} from "react-router-dom";
 
 import AllHotels from "./pages/AllHotels";
 import Layout from "./components/layout/Layout";
-import { saveAddedHotel } from "./lib/local-storage";
+import HotelDeleteModal from "./components/hotels/HotelDeleteModal";
+/* import { saveAddedHotel } from "./lib/local-storage"; */
 
 const NewHotel = React.lazy(() => import("./pages/NewHotel"));
 
@@ -62,9 +67,20 @@ try{
   dummyHotelsList.forEach((hotel) => saveAddedHotel(hotel));
 } catch{
   
-}
- */
+} */
 function App() {
+  const [modalIsShown, setModalIsShown] = useState(false);
+  /* const location = useLocation(); */
+  /* const background = location.state && location.state.background; */
+
+  const showModalHandler = () => {
+    setModalIsShown(true);
+  };
+
+  const hideModalHandler = () => {
+    setModalIsShown(false);
+  };
+
   return (
     <Layout>
       <Suspense>
@@ -72,8 +88,9 @@ function App() {
           <Route path="/" exact>
             <Redirect to="/hotels-list" />
           </Route>
+           {modalIsShown && <HotelDeleteModal onHideModal={hideModalHandler} />}
           <Route path="/hotels-list" exact>
-            <AllHotels />
+            <AllHotels onShowModal={showModalHandler} />
           </Route>
           <Route path="/new-hotel">
             <NewHotel />

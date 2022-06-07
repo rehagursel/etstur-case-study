@@ -1,23 +1,37 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import HotelsList from "../components/hotels/HotelsList";
-import NoHotelsFound from "../components/hotels/NoHotelsFound";
 import { loadAddedHotels } from "../lib/local-storage";
 import useLocale from "../hooks/use-locale";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
+import { listActions } from "../store/list-slice";
 
-const AllHotels = () => {
+const NoHotelsFound = React.lazy(() =>
+  import("../components/hotels/NoHotelsFound")
+);
 
+const AllHotels = (props) => {
+  const reduxHotelsList = useSelector((state) => state.list.hotelsList);
+  const dispatch = useDispatch();
+
+  console.log("AllHotels");
 
   const {
-    sendRequest,
+    sendRequest: sendLoadRequest,
     status,
     data: loadedHotels,
   } = useLocale(loadAddedHotels, true);
 
   useEffect(() => {
-    sendRequest();
-  }, [sendRequest]);
+    sendLoadRequest();
+  }, []);
+
+  useEffect(() => {
+    loadedHotels?.forEach((hotel) =>
+      dispatch(listActions.addHotelToList(hotel))
+    );
+  }, [loadedHotels]);
 
   if (status === "pending") {
     return (
@@ -27,19 +41,15 @@ const AllHotels = () => {
     );
   }
 
-  if (
-    status === "completed" &&
-    (!loadedHotels || loadedHotels.length === 0) 
-  ) {
+  if (status === "completed" && reduxHotelsList.length === 0) {
     return <NoHotelsFound />;
   }
 
-  const loadedHotelslist = [...loadedHotels]
-  console.log(loadedHotelslist)
-
+  console.log("reduxhotelslist", reduxHotelsList);
+  const hotelList = [...reduxHotelsList];
   return (
     <React.Fragment>
-      <HotelsList hotels={loadedHotelslist} />
+      <HotelsList hotels={hotelList} onClick={props.onShowModal} />
     </React.Fragment>
   );
 };

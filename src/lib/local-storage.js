@@ -1,4 +1,4 @@
-export function loadAddedHotels() {
+export function loadAddedHotels() { 
   const addedHotels = [];
 
   Object.keys(localStorage).forEach((key) => {
@@ -6,9 +6,6 @@ export function loadAddedHotels() {
     addedHotels.unshift(JSON.parse(obj));
   });
 
-  addedHotels.sort((a, b) =>
-    a.logTime < b.logTime ? 1 : b.logTime < a.logTime ? -1 : 0
-  );
   return addedHotels;
 }
 
@@ -16,6 +13,7 @@ export function editHotelScore(hotel) {
   localStorage.setItem(
     hotel.name,
     JSON.stringify({
+      key: hotel.name,
       id: hotel.name,
       score: hotel.score,
       name: hotel.name,
@@ -33,6 +31,7 @@ export function saveAddedHotel(hotel) {
     localStorage.setItem(
       hotel.name,
       JSON.stringify({
+        key: hotel.name,
         id: hotel.name,
         score: hotel.score,
         name: hotel.name,

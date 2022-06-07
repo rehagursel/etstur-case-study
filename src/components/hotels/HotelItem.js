@@ -1,44 +1,64 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+/* import { useHistory } from "react-router-dom"; */
 
-import Input from "../UI/Input";
 import Button from "../UI/Button";
-import { editHotelScore, deleteAddedHotel } from "../../lib/local-storage";
+import { editHotelScore } from "../../lib/local-storage";
 import useLocale from "../../hooks/use-locale";
+import { sortIsScoreActions } from "../../store/sort-slice";
+import { listActions } from "../../store/list-slice";
+
 import classes from "./HotelItem.module.css";
 
 const HotelItem = (props) => {
   const [score, setScore] = useState(+props.score);
   const [isHover, setIsHover] = useState(false);
-  const { sendRequest, status } = useLocale(deleteAddedHotel);
-  const history = useHistory();
+  /* const { sendRequest: sendDeleteRequest, status: deleteStatus } =
+    useLocale(deleteAddedHotel); */
+  const { sendRequest: sendEditRequest, status: editStatus } =
+    useLocale(editHotelScore);
+  const dispatch = useDispatch();
+  console.log("HotelItem");
+  /* const history = useHistory(); */
 
   useEffect(() => {
-    if (status === "completed") {
-      history.push("/hotels-list");
+    /* if (deleteStatus === "completed") {
+      dispatch(listActions.removeHotelFromList(props.name)); */
+
+    if (editStatus === "completed") {
+      dispatch(
+        listActions.editHotelAtTheList({ name: props.name, score: score })
+      );
     }
-  }, [status, history]);
-
-  const time = new Date();
+  }, [/* deleteStatus, */ editStatus, score]);
 
   useEffect(() => {
-    editHotelScore({
+    const time = new Date();
+    sendEditRequest({
       name: props.name,
       score: score,
       logTime: time,
     });
   }, [score]);
 
-  const deleteHotelHandler = () => {
-    sendRequest(props.name);
+  const saveHotelNameHandler = () => {
+    dispatch(listActions.saveHotelName(props.name));
+    /* sendDeleteRequest(props.name); */
+   /*  history.push("/hotels-list"); */
   };
 
   const incrementHandler = () => {
-    setScore((score) => +(score + 0.1).toFixed(1));
+    if (score < 10) {
+      setScore((score) => +(score + 0.1).toFixed(1));
+    }
+    dispatch(sortIsScoreActions.sort());
   };
 
   const decrementHandler = () => {
-    setScore((score) => +(score - 0.1).toFixed(1));
+    if (score > 0.1) {
+      setScore((score) => +(score - 0.1).toFixed(1));
+    }
+    dispatch(sortIsScoreActions.sort());
   };
 
   const deleteButtonAddHandler = () => {
@@ -79,7 +99,10 @@ const HotelItem = (props) => {
           <Button
             className={"delete"}
             type="button"
-            onClick={deleteHotelHandler}
+            onClick={() => {
+              saveHotelNameHandler();
+              props.onClick();
+            }}
           >
             &#x2715;
           </Button>

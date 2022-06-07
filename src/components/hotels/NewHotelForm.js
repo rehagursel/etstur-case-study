@@ -4,15 +4,14 @@ import { Prompt } from "react-router-dom";
 import Card from "../UI/Card";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import Button from "../UI/Button";
-import { setAddedHotel } from "../../lib/local-storage";
+/* import { setAddedHotel } from "../../lib/local-storage"; */
 import classes from "./NewHotelForm.module.css";
 
 const NewBookForm = (props) => {
   const [isEntered, setIsEntered] = useState(false);
   const nameInputRef = useRef();
   const scoreInputRef = useRef();
-
-  console.log("err", props.statusType.error);
+  console.log("NewHotelForm");
 
   function submitFormHandler(event) {
     event.preventDefault();
@@ -24,7 +23,7 @@ const NewBookForm = (props) => {
     props.onAddHotel({
       name: enteredName,
       score: enteredScore,
-      logTime: time,
+      logTime: Date.parse(time),
     });
   }
 
@@ -35,9 +34,6 @@ const NewBookForm = (props) => {
   function finishFocusedHandler() {
     setIsEntered(false);
   }
-
-  console.log("counter");
-  console.log("status", props.statusType.status);
 
   if (props.statusType.status === "pending") {
     return (
@@ -93,6 +89,8 @@ const NewBookForm = (props) => {
               type="number"
               step=".1"
               id="score"
+              max="10"
+              min="1"
               ref={scoreInputRef}
             />
           </div>
