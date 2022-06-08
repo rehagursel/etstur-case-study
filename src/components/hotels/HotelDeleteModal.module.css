@@ -1,22 +1,29 @@
-/* .cart-items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-height: 20rem;
-    overflow: auto;
-  } */
-  
-  /* .total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin: 1rem 0;
-  } */
-  
- /*  .actions {
-    text-align: right;
-  } */
-  
-  
+.deleteModal {
+  display: flex;
+  width: 100%;
+}
+.deleteModalMain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.deleteModalMain h1 {
+  margin: 0 0 0 1.5rem;
+  font-weight: normal;
+}
+
+.deleteModalMain p {
+  align-self: center;
+  margin: 2rem;
+}
+
+.deleteModalMain span {
+  font-weight: bold;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

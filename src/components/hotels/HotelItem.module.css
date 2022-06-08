@@ -1,42 +1,35 @@
 .item {
-  width: 80%;
+  width: 100%;
   margin: 1rem 0;
-  
   display: flex;
-  
   align-items: flex-end;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   background-color: #ffffff;
-  /* border: 1px rgb(102, 255, 0) solid; */
 }
 
 .item:hover {
-  background-color: #F6F9FD;
+  background-color: #f6f9fd;
 }
 
 .cover {
   margin: 0;
-  padding: 1rem ;
+  padding: 1rem;
   font-size: 1rem;
   box-sizing: border-box;
   width: 100%;
   display: flex;
-  
-  /* border: 1px rgb(19, 13, 13) solid; */
 }
 
 .infoBox {
   width: 60%;
   margin: 0 1rem;
-  /* border: 1px red solid; */
 }
 
-.hotelName{
+.hotelName {
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 0;
-  /* border: 1px red solid; */
 }
 
 .score {
@@ -44,11 +37,10 @@
   width: 40%;
   border-radius: 3px;
   margin-bottom: 1rem;
-  background-color: #F6F9FD;
-  color: #0EC5BC;
-  margin: .3rem 0 2rem 0;
-  padding-left: .5rem;
-  /* border: 1px red solid; */
+  background-color: #f6f9fd;
+  color: #0ec5bc;
+  margin: 0.3rem 0 2rem 0;
+  padding-left: 0.5rem;
 }
 
 .cover img {
@@ -56,16 +48,9 @@
   height: 10rem;
   min-width: 8rem;
   border-radius: 6px;
-  /* border: 1px red solid; */
 }
 
-/* @media screen and (max-width: 760px)  {
-  .cover img {
-    width: 25%;
-    height: 8rem;
-    min-width: 5rem;
-  }
-  .cover {
-    font-size: 8px;
-  }
-} */
+.deleteBtn {
+  align-self: flex-start;
+  width: 1.7rem;
+}

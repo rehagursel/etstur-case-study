@@ -4,14 +4,15 @@ import { Prompt } from "react-router-dom";
 import Card from "../UI/Card";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import Button from "../UI/Button";
-/* import { setAddedHotel } from "../../lib/local-storage"; */
+import Input from "../UI/Input";
+
 import classes from "./NewHotelForm.module.css";
 
 const NewBookForm = (props) => {
   const [isEntered, setIsEntered] = useState(false);
+
   const nameInputRef = useRef();
   const scoreInputRef = useRef();
-  console.log("NewHotelForm");
 
   function submitFormHandler(event) {
     event.preventDefault();
@@ -23,8 +24,8 @@ const NewBookForm = (props) => {
     props.onAddHotel({
       name: enteredName,
       score: enteredScore,
-      /* editTime: Date.parse(time), */
       logTime: Date.parse(time),
+      editTime: Date.parse(time),
     });
   }
 
@@ -80,19 +81,29 @@ const NewBookForm = (props) => {
             </div>
           )}
           <div className={classes.control}>
-            <label htmlFor="name">Otel Adı</label>
-            <input required type="text" id="name" ref={nameInputRef} />
+            <Input
+              className={classes.control}
+              ref={nameInputRef}
+              label={"Otel Adı"}
+              input={{
+                htmlFor: "name",
+                id: "name",
+                type: "text",
+              }}
+            />
           </div>
           <div className={classes.control}>
-            <label htmlFor="score">Puan</label>
-            <input
-              required
-              type="number"
-              step=".1"
-              id="score"
-              max="10"
-              min="1"
+            <Input
               ref={scoreInputRef}
+              label={"Puan"}
+              input={{
+                htmlFor: "score",
+                id: "score",
+                type: "number",
+                min: "1",
+                max: "10",
+                step: ".1",
+              }}
             />
           </div>
           {checkButton}

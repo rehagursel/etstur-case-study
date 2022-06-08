@@ -1,27 +1,27 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer, useCallback } from "react";
 
 function localeReducer(state, action) {
-  if (action.type === 'SEND') {
+  if (action.type === "SEND") {
     return {
       data: null,
       error: null,
-      status: 'pending',
+      status: "pending",
     };
   }
 
-  if (action.type === 'SUCCESS') {
+  if (action.type === "SUCCESS") {
     return {
       data: action.responseData,
       error: null,
-      status: 'completed',
+      status: "completed",
     };
   }
 
-  if (action.type === 'ERROR') {
+  if (action.type === "ERROR") {
     return {
       data: null,
       error: action.errorMessage,
-      status: 'error',
+      status: "error",
     };
   }
 
@@ -30,20 +30,20 @@ function localeReducer(state, action) {
 
 function useLocale(requestFunction, startWithPending = false) {
   const [localeState, dispatch] = useReducer(localeReducer, {
-    status: startWithPending ? 'pending' : null,
+    status: startWithPending ? "pending" : null,
     data: null,
     error: null,
   });
 
   const sendRequest = useCallback(
     async function (requestData) {
-      dispatch({ type: 'SEND' });
+      dispatch({ type: "SEND" });
       try {
         const responseData = await requestFunction(requestData);
-        dispatch({ type: 'SUCCESS', responseData });
+        dispatch({ type: "SUCCESS", responseData });
       } catch (error) {
         dispatch({
-          type: 'ERROR',
+          type: "ERROR",
           errorMessage: error.message,
         });
       }

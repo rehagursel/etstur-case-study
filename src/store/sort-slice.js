@@ -4,8 +4,8 @@ const sortSlice = createSlice({
   name: "sort",
   initialState: { sortIsScore: false },
   reducers: {
-   sort(state, action) {
-     const sortType = action.payload;
+    sort(state, action) {
+      const sortType = action.payload;
       state.sortIsScore = sortType;
     },
   },

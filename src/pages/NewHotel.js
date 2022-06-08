@@ -21,9 +21,7 @@ const NewHotel = () => {
     if (status !== "completed") {
       return;
     }
-    console.log("NewHotel-UE");
     const timer = setTimeout(() => {
-      console.log("NewHotel-UE-settimeout");
       history.push("/hotels-list");
     }, 600);
 

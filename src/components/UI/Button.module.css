@@ -1,26 +1,26 @@
 .increment {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #0F70FD;
-  color: #0F70FD;
-  padding: .5rem .7rem;
-  margin: .3rem;
+  border: 0.7px solid #0f70fd;
+  color: #0f70fd;
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem;
   background-color: #ffffff;
 }
 
 .increment:hover,
 .increment:active {
-  color: #0EC5BC;
-  border-color: #0EC5BC;
+  color: #0ec5bc;
+  border-color: #0ec5bc;
 }
 
 .decrement {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #0F70FD;
-  color: #0F70FD;
-  padding: .5rem .7rem;
-  margin: .3rem;
+  border: 0.7px solid #0f70fd;
+  color: #0f70fd;
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem;
   background-color: #ffffff;
 }
 
@@ -33,38 +33,38 @@
 .add {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #0F70FD;
+  border: 0.7px solid #0f70fd;
   color: #ffffff;
-  padding: .8rem 2rem;
-  margin: .3rem;
+  padding: 0.8rem 2rem;
+  margin: 0.3rem;
   float: right;
-  background-image: linear-gradient(to right, #484AFE , #056BFD);
+  background-image: linear-gradient(to right, #484afe, #056bfd);
 }
 
 .addConfirm {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #50C713;
+  border: 0.7px solid #50c713;
   color: #ffffff;
-  padding: .8rem 2rem;
-  margin: .3rem;
+  padding: 0.8rem 2rem;
+  margin: 0.3rem;
   float: right;
-  background-color: #50C713;
+  background-color: #50c713;
 }
 
 .deleteHotelBtn {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #0F70FD;
+  border: 0.7px solid #0f70fd;
   color: #ffffff;
-  padding: .7rem 2.3rem;
-  margin: .3rem;
-  background-image: linear-gradient(to right, #484AFE , #056BFD);
+  padding: 0.7rem 2.3rem;
+  margin: 0.3rem;
+  background-image: linear-gradient(to right, #484afe, #056bfd);
 }
 
 .deleteHotelBtn:hover,
 .deleteHotelBtn:active {
-  background-image:none;
+  background-image: none;
   background-color: #e03e36;
   border-color: #e03e36;
 }
@@ -72,60 +72,49 @@
 .deleteHotelBtnConfirm {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #50C713;
+  border: 0.7px solid #50c713;
   color: #ffffff;
-  padding: .7rem 2.3rem;
-  margin: .3rem;
-  background-color: #50C713;
+  padding: 0.7rem 2.3rem;
+  margin: 0.3rem;
+  background-color: #50c713;
 }
 
 .cancelBtn {
   cursor: pointer;
   border-radius: 4px;
-  border: .7px solid #0F70FD;
-  color: #0F70FD;
-  padding: .7rem 2.3rem;
-  margin: .3rem;
+  border: 0.7px solid #0f70fd;
+  color: #0f70fd;
+  padding: 0.7rem 2.3rem;
+  margin: 0.3rem;
   background-color: #ffffff;
 }
 
 .cancelBtn:hover,
 .cancelBtn:active {
-  color: #0EC5BC;
-  border-color: #0EC5BC;
+  color: #0ec5bc;
+  border-color: #0ec5bc;
 }
 
-.delete{
-  
+.delete {
   width: 1.5rem;
-  height:1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   background-color: #e70303;
-  border: .7px solid #e70303;
-  /* position: relative;
-  bottom: 1.5rem;
-  right: -2.5rem; */
-  
-  /* position:relative;
-  right: -2.5rem; */
-  
-  color:#ffffff;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 1.7rem;
+  right: -1.7rem;
+  color: #ffffff;
 }
-.quit{
-  
+.quit {
   width: 1.5rem;
-  height:1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
-  background-color: #EBF1FA;
-  border: .7px solid #EBF1FA;
-  /* position: relative;
+  background-color: #ebf1fa;
+  border: 0.7px solid #ebf1fa;
+  position: relative;
   bottom: 1.5rem;
-  right: -2.5rem; */
-  
-  /* position:relative;
-  right: -2.5rem; */
-  
-  color:#0000008e;
+  right: -1.5rem;
+  color: #0000008e;
 }
-
-

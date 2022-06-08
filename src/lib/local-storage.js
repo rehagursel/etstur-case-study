@@ -1,11 +1,10 @@
-export function loadLocalListHotels() { 
+export function loadLocalListHotels() {
   const addedHotels = [];
 
   Object.keys(localStorage).forEach((key) => {
     let obj = localStorage.getItem(key);
     addedHotels.unshift(JSON.parse(obj));
   });
-
   return addedHotels;
 }
 
@@ -20,7 +19,7 @@ export function editHotelScore(hotel) {
       src: "https://www.etstur.com/resources_t/img/hotel/default_image.png",
       editTime: hotel.editTime,
       logTime: hotel.logTime,
-    }) 
+    })
   );
   return null;
 }
@@ -46,8 +45,6 @@ export function saveAddedHotel(hotel) {
 }
 
 export function deleteAddedHotel(name) {
-
-   localStorage.removeItem(name);
-    
+  localStorage.removeItem(name);
   return null;
 }

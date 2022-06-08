@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
-import { deleteAddedHotel } from "../../lib/local-storage";
 import useLocale from "../../hooks/use-locale";
+import { deleteAddedHotel } from "../../lib/local-storage";
 import { listActions } from "../../store/list-slice";
 
-/* import classes from "./HotelDeleteModal.module.css"; */
+import classes from "./HotelDeleteModal.module.css";
 
 const HotelDeleteModal = (props) => {
   const reduxDeleteHotelName = useSelector(
@@ -16,14 +16,14 @@ const HotelDeleteModal = (props) => {
   const { sendRequest: sendDeleteRequest, status: deleteStatus } =
     useLocale(deleteAddedHotel);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (deleteStatus !== "completed") {
       return;
     }
     dispatch(listActions.removeHotelFromList(reduxDeleteHotelName));
     const timer = setTimeout(() => {
-      props.setModalIsShown(false)
+      props.setModalIsShown(false);
     }, 500);
 
     return () => {
@@ -36,17 +36,17 @@ const HotelDeleteModal = (props) => {
   };
 
   const closeModalHandler = () => {
-    props.setModalIsShown(false)
-  }
+    props.setModalIsShown(false);
+  };
 
   let deleteButton = (
     <Button
-        className={"deleteHotelBtn"}
-        type="button"
-        onClick={deleteHotelHandler}
-      >
-        OTELİ SİL
-      </Button>
+      className={"deleteHotelBtn"}
+      type="button"
+      onClick={deleteHotelHandler}
+    >
+      OTELİ SİL
+    </Button>
   );
 
   if (deleteStatus === "completed") {
@@ -63,12 +63,25 @@ const HotelDeleteModal = (props) => {
 
   return (
     <Modal onClick={closeModalHandler}>
-      <h1>Oteli Sil</h1>
-      <p>{reduxDeleteHotelName}'i silmek istediğinizden emin misiniz?</p>
-      {deleteButton}
-      <Button className={"cancelBtn"} type="button" onClick={closeModalHandler}>
-        VAZGEÇ
-      </Button>
+      <div className={classes.deleteModal}>
+        <div className={classes.deleteModalMain}>
+          <h1>Oteli Sil</h1>
+          <p>
+            <span>{reduxDeleteHotelName}</span>'i silmek istediğinizden emin
+            misiniz?
+          </p>
+          <div className={classes.actionButtons}>
+            {deleteButton}
+            <Button
+              className={"cancelBtn"}
+              type="button"
+              onClick={closeModalHandler}
+            >
+              VAZGEÇ
+            </Button>
+          </div>
+        </div>
+      </div>
       <Button className={"quit"} type="button" onClick={closeModalHandler}>
         &#x2715;
       </Button>

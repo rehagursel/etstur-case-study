@@ -1,5 +1,6 @@
 .main {
   margin: 8rem auto;
   width: 60%;
-  max-width: 70rem;
+  max-width: 40rem;
+  min-width: 30rem;
 }

@@ -4,15 +4,17 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 20;
+  z-index: 30;
   background-color: #a59fac9c;
 }
 
 .modal {
   position: fixed;
   top: 40vh;
-  left: 5%;
-  width: 90%;
+  left: 10%;
+  width: 80%;
+  max-width: 30rem;
+  min-width: 25rem;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
@@ -21,9 +23,13 @@
   animation: slide-down 300ms ease-out forwards;
 }
 
+.content {
+  display: flex;
+}
+
 @media (min-width: 768px) {
   .modal {
-    width: 40rem;
+    max-width: 30rem;
     left: calc(50% - 20rem);
   }
 }
