@@ -2,14 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import HotelsList from "../components/hotels/HotelsList";
+import NoHotelsFound from "../components/hotels/NoHotelsFound";
 import { loadLocalListHotels } from "../lib/local-storage";
 import useLocale from "../hooks/use-locale";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import { listActions } from "../store/list-slice";
-
-const NoHotelsFound = React.lazy(() =>
-  import("../components/hotels/NoHotelsFound")
-);
 
 const AllHotels = (props) => {
   const reduxHotelsList = useSelector((state) => state.list.hotelsList);

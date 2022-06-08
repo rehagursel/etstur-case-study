@@ -2,10 +2,9 @@ import React, { useEffect, useState, Suspense } from "react";
 import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 
 import AllHotels from "./pages/AllHotels";
+import NewHotel from "./pages/NewHotel";
 import Layout from "./components/layout/Layout";
 import HotelDeleteModal from "./components/hotels/HotelDeleteModal";
-
-const NewHotel = React.lazy(() => import("./pages/NewHotel"));
 
 function App() {
   const [modalIsShown, setModalIsShown] = useState(false);

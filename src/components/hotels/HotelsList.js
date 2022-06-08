@@ -24,7 +24,7 @@ const HotelsList = ({ hotels, onClick }) => {
 
   function changeSortHandler() {
     dispatch(sortIsScoreActions.sort(false));
-    setIsSortingDescending((isSortingDescending) => !isSortingDescending);
+    setIsSortingDescending(isSortingDescending=>!isSortingDescending)
     setIsSort(true);
   }
 
@@ -53,7 +53,7 @@ const HotelsList = ({ hotels, onClick }) => {
       </div>
       <div className={classes.sorting}>
         <button onClick={changeSortHandler}>
-          {isSortingDescending ? "Puan (Artan)" : "Puan (Azalan)"}
+          {isSortingDescending ?  "▲ Puan (Artan)" : "▼ Puan (Azalan)"}
         </button>
       </div>
       <ul className={classes.list}>
