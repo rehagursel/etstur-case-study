@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/etstur-case-study/static/css/main.1303562f.chunk.css",
+    "main.css": "/etstur-case-study/static/css/main.85fc7017.chunk.css",
     "main.js": "/etstur-case-study/static/js/main.53705ac4.chunk.js",
     "main.js.map": "/etstur-case-study/static/js/main.53705ac4.chunk.js.map",
     "runtime-main.js": "/etstur-case-study/static/js/runtime-main.c6568e95.js",
@@ -16,13 +16,13 @@
     "index.html": "/etstur-case-study/index.html",
     "static/css/3.6f3d1231.chunk.css.map": "/etstur-case-study/static/css/3.6f3d1231.chunk.css.map",
     "static/css/4.11931e34.chunk.css.map": "/etstur-case-study/static/css/4.11931e34.chunk.css.map",
-    "static/css/main.1303562f.chunk.css.map": "/etstur-case-study/static/css/main.1303562f.chunk.css.map",
+    "static/css/main.85fc7017.chunk.css.map": "/etstur-case-study/static/css/main.85fc7017.chunk.css.map",
     "static/js/2.89dceda9.chunk.js.LICENSE.txt": "/etstur-case-study/static/js/2.89dceda9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c6568e95.js",
     "static/js/2.89dceda9.chunk.js",
-    "static/css/main.1303562f.chunk.css",
+    "static/css/main.85fc7017.chunk.css",
     "static/js/main.53705ac4.chunk.js"
   ]
 }
