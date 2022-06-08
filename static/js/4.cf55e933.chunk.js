@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-complete-guide"]=this["webpackJsonpreact-complete-guide"]||[]).push([[4],{66:function(e,t,n){e.exports={noHotel:"NoHotelsFound_noHotel__2S6DK"}},67:function(e,t,n){"use strict";n.r(t);var o=n(12),s=n(66),c=n.n(s),l=n(1);t.default=function(){return Object(l.jsxs)("div",{className:c.a.noHotel,children:[Object(l.jsx)("p",{children:"Otel listesi bo\u015f!"}),Object(l.jsx)(o.b,{to:"/new-hotel",className:"btn",children:"Yeni Otel Ekle"})]})}}}]);
+//# sourceMappingURL=4.cf55e933.chunk.js.map
