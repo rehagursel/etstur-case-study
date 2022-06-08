@@ -2,7 +2,7 @@
   "name": "react-complete-guide",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rehagursel.github.io/hotels-list",
+  "homepage": "https://rehagursel.github.io/etstur-case-study/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.11.6",
