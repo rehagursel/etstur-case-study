@@ -35,4 +35,4 @@ npm start
 http://localhost:3000
 ```
 
-![etstur-case-study](https://res.cloudinary.com/di3ejxszt/image/upload/v1654700790/Portfolio/ets-case-study/Screen_Shot_2022-06-08_at_18.04.38_cioj1x.png)
+![etstur-case-study](https://res.cloudinary.com/di3ejxszt/image/upload/v1654706521/Portfolio/ets-case-study/Screen_Shot_2022-06-08_at_19.39.26_vjmgho.png)
