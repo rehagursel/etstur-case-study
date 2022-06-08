@@ -27,7 +27,7 @@ function App() {
               setModalIsShown={setModalIsShown}
             />
           )}
-          <Route path="/hotels-list">
+          <Route path="/hotels-list" exact>
             <AllHotels onShowModal={showModalHandler} />
           </Route>
           <Route path="/new-hotel">
