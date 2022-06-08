@@ -53,7 +53,7 @@ const HotelsList = ({ hotels, onClick }) => {
       </div>
       <div className={classes.sorting}>
         <button onClick={changeSortHandler}>
-          Sort {isSortingDescending ? "Puan (Artan)" : "Puan (Azalan)"}
+          {isSortingDescending ? "Puan (Artan)" : "Puan (Azalan)"}
         </button>
       </div>
       <ul className={classes.list}>
