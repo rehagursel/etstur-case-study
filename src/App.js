@@ -1,5 +1,5 @@
-import React, { useState, Suspense } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React, { useEffect, useState, Suspense } from "react";
+import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 
 import AllHotels from "./pages/AllHotels";
 import Layout from "./components/layout/Layout";
@@ -9,6 +9,11 @@ const NewHotel = React.lazy(() => import("./pages/NewHotel"));
 
 function App() {
   const [modalIsShown, setModalIsShown] = useState(false);
+
+  let history = useHistory();
+  useEffect(() => {
+    history.push("/hotels-list");
+  }, [history]);
 
   const showModalHandler = () => {
     setModalIsShown(true);
